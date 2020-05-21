@@ -14,6 +14,7 @@ public class ControlGeneracion : MonoBehaviour
     private float maxTime = 5;
     public Text Oleada;
     public int zombies;
+    public GameObject generador;
     
 
     // Start is called before the first frame update
@@ -22,7 +23,7 @@ public class ControlGeneracion : MonoBehaviour
         zombies = 1;
         numeroOleada = 1;
         Oleada.text = "Oleada #" + numeroOleada;
-        rangoGeneracion = 4f;
+        rangoGeneracion = 1f;
         
         GeneradorEnemigos(numeroOleada);
         
@@ -63,8 +64,8 @@ public class ControlGeneracion : MonoBehaviour
 
     Vector3 DamePosicionGeneracion()
     {
-        float GeneracionX = Random.Range(-rangoGeneracion, rangoGeneracion);
-        float GeneracionY = Random.Range(-rangoGeneracion, rangoGeneracion);
+        float GeneracionX = generador.transform.position.x;
+        float GeneracionY = generador.transform.position.z;
 
         Vector3 posAleatoria = new Vector3(GeneracionX, 0, GeneracionY);
         return posAleatoria;
