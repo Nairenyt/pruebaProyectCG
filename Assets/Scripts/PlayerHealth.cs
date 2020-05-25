@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        hbLength = Screen.with / 2;
+        hbLength = Screen.width / 2;
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
         ChangeHealth(0);
     }
 
-    void GUI()
+    void GUIa()
     {
         GUI.Box(new Rect(10, 10, hbLength, 30), currentHealth + " / " + maxHealth);
     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -8,10 +9,13 @@ public class Inventory : MonoBehaviour
     public GameObject[] pst;
     int i = 1;
     int activeGun;
+    public int puntuacion;
+    public Text puntu;
 
     // Start is called before the first frame update
     void Start()
     {
+        puntuacion = 0;
         Debug.Log(pst[0].transform.name);
         activeGun = 0;
     }
@@ -19,6 +23,8 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        puntu.text = puntuacion + "";
+
         if (Input.GetKey(KeyCode.Alpha1) && pst[0] != null)
         {
             foreach( GameObject g in pst)

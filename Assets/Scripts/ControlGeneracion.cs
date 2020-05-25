@@ -22,7 +22,7 @@ public class ControlGeneracion : MonoBehaviour
     {
         zombies = 1;
         numeroOleada = 1;
-        Oleada.text = "Oleada #" + numeroOleada;
+        Oleada.text = "" + numeroOleada;
         rangoGeneracion = 1f;
         
         GeneradorEnemigos(numeroOleada);
@@ -45,7 +45,7 @@ public class ControlGeneracion : MonoBehaviour
             {
                 zombies += 2;
                 numeroOleada ++;
-                Oleada.text = "Oleada #" + numeroOleada;
+                Oleada.text = "" + numeroOleada;
                 GeneradorEnemigos(zombies);
 
                 currentTime = 0;
