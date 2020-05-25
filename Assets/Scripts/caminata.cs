@@ -14,7 +14,7 @@ public class caminata : MonoBehaviour
     void Start()
     {
        
-        speed = 12;
+        speed = 8;
         visionRadio = 90f;
         rb = gameObject.GetComponent<Rigidbody>();
         Cube = GameObject.FindGameObjectWithTag("Player");
