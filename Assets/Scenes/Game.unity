@@ -1652,7 +1652,7 @@ MonoBehaviour:
   numeroOleada: 0
   Oleada: {fileID: 1957424529}
   zombies: 0
-  generador: {fileID: 0}
+  generador: {fileID: 442999667}
 --- !u!4 &442999669
 Transform:
   m_ObjectHideFlags: 0
