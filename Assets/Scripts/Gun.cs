@@ -1,6 +1,5 @@
 ﻿
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
@@ -12,32 +11,18 @@ public class Gun : MonoBehaviour
     public bool trigg = true;
     public GameObject muzzlePrefab;
     public GameObject bala;
-    GameObject reload;
-    Text reloadTx;
-
-    public int cargador;
-    int ammo;
-
 
     private void Start()
     {
-
         fpsCam = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
-        ammo = cargador;
-        reload = GameObject.FindWithTag("Reload");
-        reloadTx = reload.GetComponent<Text>();
-        reloadTx.text = "Bullets: " + ammo;
+      
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(active == true)
-        {
-            reloadTx.text = "Bullets: " + ammo;
-        }
-
-        if (Input.GetMouseButtonDown(0) && active == true && ammo != 0)
+        if (Input.GetMouseButtonDown(0) && active == true)
         {
             if (muzzlePrefab != null)
             {
@@ -58,16 +43,7 @@ public class Gun : MonoBehaviour
 
             Debug.Log("Ince");
             shoot();
-            ammo--;
-            
         }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            ammo = cargador;
-        }
-
-        
     }
 
     void shoot()

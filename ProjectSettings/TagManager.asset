@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Enemy
   - Gun
-  - Reload
   layers:
   - Default
   - TransparentFX
