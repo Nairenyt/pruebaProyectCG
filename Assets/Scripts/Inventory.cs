@@ -11,6 +11,19 @@ public class Inventory : MonoBehaviour
     int activeGun;
     public int puntuacion;
     public Text puntu;
+    public GameObject pistolc;
+    public GameObject escopec;
+    public GameObject riflec;
+    public GameObject subfc;
+    public Text pistolt;
+    public Text escopet;
+    public Text riflet;
+    public Text subft;
+    public GameObject pistolta;
+    public GameObject escopeta;
+    public GameObject rifleta;
+    public GameObject subfta;
+
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +73,18 @@ public class Inventory : MonoBehaviour
             pst[2].SetActive(true);
             activeGun = 2;
         }
+
+        if (Input.GetKey(KeyCode.Alpha4) && pst[3] != null)
+        {
+            foreach (GameObject g in pst)
+            {
+                if (g != null)
+                    g.SetActive(false);
+            }
+
+            pst[3].SetActive(true);
+            activeGun = 3;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -77,11 +102,36 @@ public class Inventory : MonoBehaviour
                 pst[activeGun].SetActive(false);
                 i++;
                 activeGun = i;
+                active(other.gameObject.transform.name, i);
             }
             else
             {
 
             }
+        }
+    }
+
+    public void active(string name, int num)
+    {
+    
+        if(name == "Fusil")
+        {
+            subfc.SetActive(true);
+            subfta.SetActive(true);
+
+            subft.text = num + "";
+        }
+        if(name == "SubFusil")
+        {
+            riflec.SetActive(true);
+            rifleta.SetActive(true);
+            riflet.text = num + "";
+        }
+        if (name == "Escopeta")
+        {
+            escopec.SetActive(true);
+            escopeta.SetActive(true);
+            escopet.text = num + "";
         }
     }
 }
